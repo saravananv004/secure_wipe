@@ -1,0 +1,26 @@
+2026-03-13 13:01:22 | [afa0ab88144e4b2da976433ca47c1723] Wipe started for D:\Secure_Data_Wiping_System\test_data with 3 passes
+2026-03-13 13:01:22 | [afa0ab88144e4b2da976433ca47c1723] Wipe finished for D:\Secure_Data_Wiping_System\test_data | verified=True | files=2
+2026-03-13 13:37:07 | [cb6dea4e76d24848a63420260348d105] Wipe started for D:\Secure_Data_Wiping_System\test_data with 7 passes
+2026-03-13 13:37:07 | [cb6dea4e76d24848a63420260348d105] Wipe finished for D:\Secure_Data_Wiping_System\test_data | verified=True | files=3
+2026-04-17 03:07:07 | [bc6ba98ece42462b90230bb3cc08de66] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:07:07 | [bc6ba98ece42462b90230bb3cc08de66] Wipe finished for E:\yggyggvhvgh | verified=True | files=1
+2026-04-17 03:15:11 | [838a475c79d640418733a8a6e92f7f4f] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:15:11 | [838a475c79d640418733a8a6e92f7f4f] ERROR: generate_certificate() got an unexpected keyword argument 'target_path'
+2026-04-17 03:16:20 | [49e2f1d7b5e44b38ad0696cc9648f0c5] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:16:20 | [49e2f1d7b5e44b38ad0696cc9648f0c5] ERROR: generate_certificate() got an unexpected keyword argument 'target_path'
+2026-04-17 03:19:37 | [f76d5684d03344fdbfb1d6f4e0279d64] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:19:37 | [f76d5684d03344fdbfb1d6f4e0279d64] ERROR: generate_certificate() missing 1 required positional argument: 'output_path'
+2026-04-17 03:24:01 | [0efab1ba6e0c46acb778ca763b7594b3] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:24:01 | [0efab1ba6e0c46acb778ca763b7594b3] Wipe finished for E:\yggyggvhvgh | verified=True | files=1
+2026-04-17 03:29:13 | [0539af7c82d84344853fdd82ba91f338] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:29:13 | [0539af7c82d84344853fdd82ba91f338] Wipe finished for E:\yggyggvhvgh | verified=True | files=1
+2026-04-17 03:33:39 | [909ced64eb89491d867cc77cd783504d] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:33:39 | [909ced64eb89491d867cc77cd783504d] Wipe finished for E:\yggyggvhvgh | verified=True | files=0
+2026-04-17 03:34:48 | [5d1c2769fab847f58bc88f1596050654] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:34:48 | [5d1c2769fab847f58bc88f1596050654] Wipe finished for E:\yggyggvhvgh | verified=True | files=0
+2026-04-17 03:36:10 | [9797cb7c614d4112947a34c943d9fcbe] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:36:10 | [9797cb7c614d4112947a34c943d9fcbe] Wipe finished for E:\yggyggvhvgh | verified=True | files=0
+2026-04-17 03:36:56 | [23d3aa6a41714721be92a395c1ab95f7] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:36:56 | [23d3aa6a41714721be92a395c1ab95f7] Wipe finished for E:\yggyggvhvgh | verified=True | files=0
+2026-04-17 03:37:29 | [b60f4cbc3f5b4d6fa56975b46edda04d] Wipe started for E:\yggyggvhvgh with 3 passes
+2026-04-17 03:37:29 | [b60f4cbc3f5b4d6fa56975b46edda04d] Wipe finished for E:\yggyggvhvgh | verified=True | files=0

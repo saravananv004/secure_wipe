@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wipe Job Status</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="shell narrow">
+    <section class="card">
+      <div class="section-head">
+        <h1>Wipe Job Status</h1>
+        <a class="ghost-link" href="{{ url_for('index') }}">Back to Dashboard</a>
+      </div>
+
+      <div class="job-meta-grid">
+        <div><label>Target Folder</label><div class="value" id="target_path">{{ job.target_path }}</div></div>
+        <div><label>Passes</label><div class="value" id="passes">{{ job.passes }}</div></div>
+        <div><label>Status</label><div class="value" id="status">{{ job.status }}</div></div>
+        <div><label>Verification</label><div class="value" id="verification">{{ job.verification }}</div></div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar"><div id="progress-fill" style="width: {{ job.percent }}%"></div></div>
+        <div class="progress-meta">
+          <span id="percent">{{ job.percent }}%</span>
+          <span id="counts">{{ job.progress_current }}/{{ job.progress_total }} files</span>
+        </div>
+      </div>
+
+      <div class="message-box" id="message">{{ job.message }}</div>
+
+      <div class="job-meta-grid second">
+        <div><label>Files Wiped</label><div class="value" id="files_wiped">{{ job.files_wiped }}</div></div>
+        <div><label>Bytes Wiped</label><div class="value" id="bytes_wiped">{{ job.bytes_wiped }}</div></div>
+        <div><label>Started At</label><div class="value" id="started_at">{{ job.started_at }}</div></div>
+        <div><label>Completed At</label><div class="value" id="completed_at">{{ job.completed_at }}</div></div>
+      </div>
+
+      <div class="button-row">
+        <a class="btn-secondary" href="{{ url_for('logs_page') }}">Open Logs</a>
+        <a class="btn-primary" id="certificate-link" href="{{ url_for('download_certificate', job_id=job.id) }}">Download Certificate</a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const jobId = {{ job.id|tojson }};
+    const certificateLink = document.getElementById('certificate-link');
+
+    async function refreshJob() {
+      const response = await fetch(`/api/job/${jobId}`);
+      const data = await response.json();
+      document.getElementById('status').textContent = data.status;
+      document.getElementById('verification').textContent = data.verification;
+      document.getElementById('progress-fill').style.width = `${data.percent}%`;
+      document.getElementById('percent').textContent = `${data.percent}%`;
+      document.getElementById('counts').textContent = `${data.progress_current}/${data.progress_total} files`;
+      document.getElementById('message').textContent = data.message;
+      document.getElementById('files_wiped').textContent = data.files_wiped;
+      document.getElementById('bytes_wiped').textContent = data.bytes_wiped;
+      document.getElementById('started_at').textContent = data.started_at || '-';
+      document.getElementById('completed_at').textContent = data.completed_at || '-';
+
+      if (!data.certificate_path) {
+        certificateLink.classList.add('disabled');
+        certificateLink.setAttribute('aria-disabled', 'true');
+      } else {
+        certificateLink.classList.remove('disabled');
+      }
+
+      if (['completed', 'completed_with_warning', 'failed'].includes(data.status)) {
+        clearInterval(intervalRef);
+      }
+    }
+
+    const intervalRef = setInterval(refreshJob, 1200);
+    refreshJob();
+  </script>
+</body>
+</html>

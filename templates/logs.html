@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Activity Logs</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="shell narrow">
+    <section class="card">
+      <div class="section-head">
+        <h1>Activity Logs</h1>
+        <a class="ghost-link" href="{{ url_for('index') }}">Back to Dashboard</a>
+      </div>
+      <div class="log-box">
+        {% if logs %}
+          {% for line in logs %}
+            <div class="log-line">{{ line }}</div>
+          {% endfor %}
+        {% else %}
+          <div class="muted">No logs available yet.</div>
+        {% endif %}
+      </div>
+    </section>
+  </div>
+</body>
+</html>
